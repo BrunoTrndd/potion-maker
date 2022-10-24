@@ -1,0 +1,17 @@
+body{
+  background-color: #1d3a52;
+  display: flex;
+  justify-content: center;
+}
+
+.grid {
+  display: grid;
+}
+
+.absolute {
+  position:absolute;
+}
+
+.grid-template-12 {
+  grid-template-columns: repeat(3, 1fr);
+}
