@@ -1,12 +1,15 @@
 import React from "react";
-import feyberry_img from '../img/feyberry.png';
-import cauldron from '../img/cauldron.png';
+const images = require.context('../img')
 
-export default function ingredient(props) {
+
+function Ingredient(props) {
+  const loadImage = imageName => (images(`./${imageName}`).default);
+
   return <>
-    <img src={cauldron} alt=""/>
-    <div className="grid absolute grid-columns-12">
-      <img src={feyberry_img} alt="" width="45" height='45'/>
+    <div className="grid grid-columns-12">
+      <img src={loadImage(props.img)} alt="" width="100" height='100'/>
     </div>
   </>
 }
+
+export default Ingredient;
