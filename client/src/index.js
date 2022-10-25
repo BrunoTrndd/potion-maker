@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './css/home.css'
 import Ingredient from './components/Ingredient/ingredient';
+import AreaType from './components/Area/area';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -16,7 +17,7 @@ root.render(
         {/* <Cauldron></Cauldron> */}
       </div>
       <div className='box rightBox'>
-        {/* <AreaType></AreaType> */}
+        <AreaType></AreaType> 
         {/* <TraitType></TraitType> */}
         {/* <PotionSize></PotionSize> */}
       </div>
