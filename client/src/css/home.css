@@ -8,10 +8,34 @@ body{
   display: grid;
 }
 
-.absolute {
-  position:absolute;
+.grid-3-1 {
+  justify-content: center;
+  grid-template: 50vh 45vh/ 20vw 30vw 20vw;
 }
 
-.grid-template-12 {
-  grid-template-columns: repeat(3, 1fr);
+.box {
+  display: flex;
+  background-color: aquamarine;
+  border: 1px solid black;
+}
+
+.leftBox {
+  margin: 0px 5px 5px 0px;
+}
+
+.centerBox {
+  margin: 0px 0px 5px 0px;
+}
+
+.rightBox {
+  margin: 0px 0px 5px 5px;
+}
+
+.bigBox {
+  background-color: aquamarine;
+  border: 1px solid black;
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 2;
+  grid-row-end: 2;
 }

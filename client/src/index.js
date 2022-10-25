@@ -1,19 +1,29 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import Ingredient from './ingredients/ingredient.js'
 import './css/home.css'
-import App from './App.js'
-
+import Ingredient from './components/Ingredient/ingredient';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <>
-    <Ingredient img="feyberry.png">
-    </Ingredient>
-    <Ingredient img="impstool_mushroom.png">
-    </Ingredient>
-    <Ingredient img="mandrake_root.png">
-    </Ingredient>
+    <div className='content grid grid-3-1'>
+      <div className='box leftBox'>
+        {/* <CauldronType></CauldronType> */}
+        {/* <PotionType></PotionType> */}
+      </div>
+      <div className='box centerBox'>
+        {/* <Logo></Logo> */}
+        {/* <Cauldron></Cauldron> */}
+      </div>
+      <div className='box rightBox'>
+        {/* <AreaType></AreaType> */}
+        {/* <TraitType></TraitType> */}
+        {/* <PotionSize></PotionSize> */}
+      </div>
+      <div className='bigBox'>
+        <Ingredient img="feyberry.png"></Ingredient>
+      </div>
+    </div>
   </>
 );
 
