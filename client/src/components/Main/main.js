@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react';
+import React, { useState } from 'react';
 import AreaType from '../Area/area';
 import Cauldron from '../Cauldron/cauldron';
 import IngredientList from '../Ingredient/ingredientList';
