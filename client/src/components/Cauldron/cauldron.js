@@ -4,9 +4,18 @@ import './cauldron.css'
 
 function Cauldron(props) {
 
+  function removeItem(item) {
+    let items = [...props.selectedIngredients]
+    items.splice(item.index, 1)
+    props.setIng(items)
+  }
+  
   function renderContent() {
-    if (props.selectedIngredients)
-      return props.selectedIngredients.map((ingredient) => <Ingredient img={ingredient.img}></Ingredient>)
+    if (props.selectedIngredients) {
+      return props.selectedIngredients.map((ingredient, ind) => {
+        return <Ingredient key={ind} info={ingredient} handleClick={removeItem} index={ind}></Ingredient>
+      })
+    }
   }
 
   return <>

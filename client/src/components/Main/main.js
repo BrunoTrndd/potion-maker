@@ -8,7 +8,7 @@ function Main() {
   const [selectedIngredients, setSelectedIngredients] = useState([]);
 
   function handleIngredientClick(ingredient) {
-    setSelectedIngredients([...selectedIngredients, ingredient])
+    setSelectedIngredients([...selectedIngredients, ingredient.info])
   }
   
   return <>
