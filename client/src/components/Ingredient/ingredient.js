@@ -6,7 +6,7 @@ function Ingredient(props) {
   const loadImage = imageName => (images(`./${imageName}`).default);
 
   return <>
-    <div className="ingredient">
+    <div className="ingredient" onClick={()=>props.handleClick(props)}>
       <img src={loadImage(props.img)} alt="" width="100" height='100'/>
     </div>
   </>

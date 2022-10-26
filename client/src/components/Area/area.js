@@ -2,7 +2,7 @@ import React from "react";
 import "./area.css";
 
 
-function Area() {
+function AreaType() {
   return <>
     <div className="areaFieldset">
       <fieldset>
@@ -39,4 +39,4 @@ function Area() {
 }
 
 
-export default Area;
+export default AreaType;
