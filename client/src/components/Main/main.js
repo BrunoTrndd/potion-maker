@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import AreaType from '../Area/area';
+import AreaType from '../Area/areaType';
 import Cauldron from '../Cauldron/cauldron';
 import IngredientList from '../Ingredient/ingredientList';
+import TraitList from '../Trait/traitList';
 import './main.css'
 
 function Main() {
@@ -23,7 +24,7 @@ function Main() {
       </div>
       <div className='box rightBox'>
         <AreaType></AreaType> 
-        {/* <TraitType></TraitType> */}
+        <TraitList></TraitList> 
         {/* <PotionSize></PotionSize> */}
       </div>
       <div className='bigBox'>

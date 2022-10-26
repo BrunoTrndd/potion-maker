@@ -1,5 +1,5 @@
 import React from "react";
-import "./area.css";
+import "./areaType.css";
 
 
 function AreaType() {
