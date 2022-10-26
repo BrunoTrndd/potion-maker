@@ -7,13 +7,10 @@ import './main.css'
 function Main() {
   const [selectedIngredients, setSelectedIngredients] = useState([]);
 
-  const handleIngredientClick = useCallback((ingredient) => {
-    let batata = [];
-    batata = selectedIngredients;
-    batata.push(ingredient)
-    setSelectedIngredients(batata)
-  }, [selectedIngredients])
-
+  function handleIngredientClick(ingredient) {
+    setSelectedIngredients([...selectedIngredients, ingredient])
+  }
+  
   return <>
     <div className='content grid grid-3-1'>
       <div className='box leftBox'>

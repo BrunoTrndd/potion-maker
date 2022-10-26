@@ -1,20 +1,17 @@
-import React, { useMemo } from "react";
+import React from "react";
 import Ingredient from "../Ingredient/ingredient";
 import './cauldron.css'
 
 function Cauldron(props) {
-  console.log(props)
-  const batata = useMemo(() => {
-    console.log(props.selectedIngredients)
-    return props.selectedIngredients.map((ingredient, index) => {
-      return <Ingredient img={ingredient.img}></Ingredient>
-    }) 
-  }, [props.selectedIngredients]);
+
+  function renderContent() {
+    if (props.selectedIngredients)
+      return props.selectedIngredients.map((ingredient) => <Ingredient img={ingredient.img}></Ingredient>)
+  }
+
   return <>
     <div id='cauldron'>
-      {
-        batata
-      }
+      {renderContent()}
     </div>
   </>
 }
