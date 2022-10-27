@@ -69,27 +69,30 @@ ingredientList = {
 class Ingredients {
   
   getIngredients(filter) {
-    let activeFilters = [];
+    var activeFilters = [];
+    let anyMatch = false;
     Object.keys(filter).map((index) => {
       if(filter[index] !== '0' && filter[index] !== 'neutral') {
-        activeFilters[index] = {index:filter[index]};
+        activeFilters[index] = filter[index];
+        anyMatch = true;
       }
     });
-    console.log(filter);
-    if(activeFilters.length == 0){
+    if(!anyMatch){
       return ingredientList;
     }
     let filteredList = {};
+    
     Object.keys(ingredientList).map((index) => {
       let match = false;
       let ingredient = ingredientList[index]
-      activeFilters.forEach((e, i) => {
-        match = ingredient[e] == i
-      })
+      Object.keys(activeFilters).map((e) => {
+        match = ingredient[e] == activeFilters[e]
+      });
       if(match) {
         filteredList[index] = ingredient
       }
     });
+    return filteredList;
   }
 
 }
