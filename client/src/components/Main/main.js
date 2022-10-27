@@ -7,7 +7,14 @@ import './main.css'
 
 function Main() {
   const [selectedIngredients, setSelectedIngredients] = useState([]);
-
+  const [filter, setFilter] = useState({
+    pallate:false,
+    stomach:false,
+    smell:false,
+    look:false,
+    hear:false,
+  });
+  
   function handleIngredientClick(ingredient) {
     setSelectedIngredients([...selectedIngredients, ingredient.info])
   }
@@ -21,14 +28,15 @@ function Main() {
       <div className='box centerBox'>
         {/* <Logo></Logo> */}
         <Cauldron selectedIngredients={selectedIngredients} setIng={setSelectedIngredients}></Cauldron>
+        <TraitList selectedIngredients={selectedIngredients}></TraitList> 
       </div>
       <div className='box rightBox'>
         <AreaType></AreaType> 
-        <TraitList></TraitList> 
+        <TraitList clickAction={setFilter} filter={filter}></TraitList> 
         {/* <PotionSize></PotionSize> */}
       </div>
       <div className='bigBox'>
-        <IngredientList handleIngredientClick={handleIngredientClick}></IngredientList>
+        <IngredientList handleIngredientClick={handleIngredientClick} filter={filter}></IngredientList>
       </div>
     </div>
   </>

@@ -1,9 +1,14 @@
 .traitFieldset {
-
-  
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
 
 .trait {
   margin: 2px;
   display:inline-block
+}
+
+.filter {
+  cursor: pointer;
 }

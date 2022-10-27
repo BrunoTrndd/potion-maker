@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react";
-import {getAll} from '../../services/IngredientService'
+import {getAll, getIngredientsByFilter} from '../../services/IngredientService'
 import Ingredient from './ingredient'
 
 
@@ -7,16 +7,16 @@ function IngredientList(props) {
   const [ingredients, setIngredients] = useState([])
   useEffect(() => {
     fetchIngredients();
-  }, []);
-  useEffect(() => {
-  }, [ingredients]);
+  }, [props.filter]);
 
   const getSearchMethod = () => {
+    if(props.filter) 
+      return getIngredientsByFilter
     return getAll
   }
 
   const fetchIngredients = async () => {
-    const response = await getSearchMethod()();
+    const response = await getSearchMethod()(props.filter);
     setIngredients(response);
   }
   
@@ -36,8 +36,5 @@ function IngredientList(props) {
   </>
 
 }
-
-
-
 
 export default IngredientList;

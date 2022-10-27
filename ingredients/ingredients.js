@@ -69,9 +69,27 @@ ingredientList = {
 class Ingredients {
   
   getIngredients(filter) {
-    if(!filter){
+    let activeFilters = [];
+    Object.keys(filter).map((index) => {
+      if(filter[index] !== '0' && filter[index] !== 'neutral') {
+        activeFilters[index] = {index:filter[index]};
+      }
+    });
+    console.log(filter);
+    if(activeFilters.length == 0){
       return ingredientList;
     }
+    let filteredList = {};
+    Object.keys(ingredientList).map((index) => {
+      let match = false;
+      let ingredient = ingredientList[index]
+      activeFilters.forEach((e, i) => {
+        match = ingredient[e] == i
+      })
+      if(match) {
+        filteredList[index] = ingredient
+      }
+    });
   }
 
 }
