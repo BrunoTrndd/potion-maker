@@ -1,0 +1,8 @@
+.slideContainer {
+  width: 70%;
+}
+
+.slider {
+  width: 100%;
+  background-image: url('../../img/components/potion_bar.png');
+}

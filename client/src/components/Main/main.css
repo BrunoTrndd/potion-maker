@@ -8,24 +8,31 @@ body{
   display: grid;
 }
 
+.flex {
+  display: flex;
+}
+
+.justfy-center {
+  justify-content: center;
+}
+
 .grid-3-1 {
   justify-content: center;
-  grid-template: 50vh 45vh/ 20vw 30vw 20vw;
+  grid-template: 50vh 45vh/ 20vw 30vw 20vw 20vw;
 }
 
 .box {
-  display: flex;
-  background-color: aquamarine;
+  background-color: #e7dbbe;
   border: 1px solid black;
 }
 
 .leftBox {
   margin: 0px 5px 5px 0px;
+  flex-direction: column;
 }
 
 .centerBox {
   margin: 0px 0px 5px 0px;
-  display: flex;
   justify-content: center;
   flex-direction: column;
 }
@@ -36,7 +43,7 @@ body{
 }
 
 .bigBox {
-  background-color: aquamarine;
+  background-color: #e7dbbe;
   border: 1px solid black;
   grid-column-start: 1;
   grid-column-end: 4;

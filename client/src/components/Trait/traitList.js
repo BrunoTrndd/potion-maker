@@ -50,9 +50,9 @@ function TraitList(props) {
           <legend>Traits</legend>
           <TraitType img="pallate_neutral.png" filterName="pallate" clickAction={props.clickAction} filter={props.filter}></TraitType>
           <TraitType img="stomach_neutral.png" filterName="stomach" clickAction={props.clickAction} filter={props.filter}></TraitType>
-          <TraitType img={getTrait("smell")}></TraitType>
-          <TraitType img={getTrait("look")}></TraitType>
-          <TraitType img={getTrait("hear")}></TraitType>
+          <TraitType img="smell_neutral.png" filterName="smell" clickAction={props.clickAction} filter={props.filter}></TraitType>
+          <TraitType img="look_neutral.png" filterName="look" clickAction={props.clickAction} filter={props.filter}></TraitType>
+          <TraitType img="hear_neutral.png" filterName="hear" clickAction={props.clickAction} filter={props.filter}></TraitType>
         </fieldset>
       </div>
     </>

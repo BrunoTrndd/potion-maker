@@ -2,6 +2,30 @@
   width: 425px;
   height: 350px;
   background-color: rgb(58, 53, 47);
+  background-image: url('../../img/cauldrons/base.png');
+  background-position: center;
   margin: 20px auto;
   padding: 5px;
+}
+
+.cauldronInfo {
+  display: inline-block;
+  padding-right: 5px;
+}
+
+.cauldronInfoFieldset{
+  height: 66px;
+}
+
+.cauldronFooter {
+  display: flex;
+}
+
+.fieldsetCauldronType{
+  display: inline-flex;
+  justify-content: space-between;
+}
+
+.cauldronType {
+  display: inline-flex;
 }
