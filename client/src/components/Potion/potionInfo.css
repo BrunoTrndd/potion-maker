@@ -3,3 +3,9 @@
   grid-template-columns: auto auto;  
   column-gap: 40px;
 }
+
+.potionRow {
+}
+.inputRow > input {
+  width: 40px;
+}

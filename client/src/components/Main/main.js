@@ -4,15 +4,17 @@ import Cauldron from '../Cauldron/cauldron';
 import CauldronFooter from '../Cauldron/cauldronFooter';
 import CauldronTypeList from '../Cauldron/cauldronTypeList';
 import IngredientList from '../Ingredient/ingredientList';
-import ResultadoTeste from '../Ingredient/resultadoTeste';
+import PossiblePotions from '../Ingredient/possiblePotions';
 import PotionInfo from '../Potion/potionInfo';
 import TraitList from '../Trait/traitList';
 
 import './main.css'
 
 function Main() {
+  
   const [selectedIngredients, setSelectedIngredients] = useState([]);
   const [selectedCauldron, setSelectedCauldron] = useState({});
+  const [ingredientsResult, setIngredientsResult] = useState([])
 
   const [filter, setFilter] = useState({
     pallate:false,
@@ -24,6 +26,14 @@ function Main() {
 
   function handleIngredientClick(ingredient) {
     setSelectedIngredients([...selectedIngredients, ingredient.info])
+  }
+
+  function handleIngredientLineClick(ingredientLine) {
+    setSelectedIngredients([...ingredientLine]);
+  }
+
+  function handleClickCalculatePotion() {
+    
   }
   
   return <>
@@ -46,7 +56,7 @@ function Main() {
         <IngredientList handleIngredientClick={handleIngredientClick} filter={filter}></IngredientList>
       </div>
       <div className='teste'>
-        <ResultadoTeste></ResultadoTeste>
+        <PossiblePotions click={handleIngredientLineClick} ingredientsResult={ingredientsResult} setIngredientsResult={setIngredientsResult}></PossiblePotions>
       </div>
     </div>
   </>

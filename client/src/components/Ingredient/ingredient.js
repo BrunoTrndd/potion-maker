@@ -10,7 +10,7 @@ function Ingredient(props) {
 
   return <>
     <div className="ingredient" onClick={handleClick}>
-      <img src={loadImage(props.info.img)} alt="" width="100" height='100' />
+      <img src={loadImage(props.info.img)} alt="" width={props.width || "100"} height={props.height || '100'} />
     </div>
   </>
 }

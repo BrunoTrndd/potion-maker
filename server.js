@@ -1,7 +1,7 @@
 const express = require('express');;
 const Ingredients = require('./ingredients/ingredients');
 const Cauldrons = require('./cauldrons/cauldron');
-const Potions = require('./potions/potion');
+const PotionCombinator = require('./potions/potion');
 const app = express();
 const port = process.env.PORT || 5000;
 
@@ -14,8 +14,11 @@ app.get('/cauldrons', (req, res)=>{
 });
 
 app.get('/potion', (req, res)=>{
-  let result =  Potions.getCombinationIngredients({A:12, B:12, C:0, D:0, E:0, totalMagimins: 24}, {maxIngredient:7, maxMagimins:140})
-  res.send(result);
+  
+  let potionCombinator = new PotionCombinator()
+  potionCombinator.getPossibleCombinations({A:12, B:12, C:0, D:0, E:0, totalMagimins: 24}, {maxIngredient:7, maxMagimins:140})
+  potionCombinator.possiblePotions
+  res.send(potionCombinator.possiblePotions);
 
 });
 
