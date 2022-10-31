@@ -2,15 +2,10 @@
   display: grid;
   width: 100%;
   padding: 2px;
-  
-  
-  
-
 }
 
 .areaItem {
   display: flex;
-  
 }
 
 .areaContent {

@@ -45,9 +45,9 @@ function Main() {
       <div className='bigBox'>
         <IngredientList handleIngredientClick={handleIngredientClick} filter={filter}></IngredientList>
       </div>
-      {/* <div className='teste'>
+      <div className='teste'>
         <ResultadoTeste></ResultadoTeste>
-      </div> */}
+      </div>
     </div>
   </>
 }

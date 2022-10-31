@@ -14,7 +14,7 @@ app.get('/cauldrons', (req, res)=>{
 });
 
 app.get('/potion', (req, res)=>{
-  let result =  Potions.getCombinationIngredients({A:6, B:6, C:0, D:0, E:0, totalMagimins: 12}, {maxIngredient:7, maxMagimins:140})
+  let result =  Potions.getCombinationIngredients({A:12, B:12, C:0, D:0, E:0, totalMagimins: 24}, {maxIngredient:7, maxMagimins:140})
   res.send(result);
 
 });
