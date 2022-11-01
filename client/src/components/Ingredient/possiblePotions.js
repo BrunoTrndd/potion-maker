@@ -5,7 +5,7 @@ import IngredientLine from "./ingredientLine";
 
 function PossiblePotions(props) {
   useEffect(() => {
-    fetchIngredients();
+    // fetchIngredients();
   }, []);
 
   const getSearchMethod = () => {

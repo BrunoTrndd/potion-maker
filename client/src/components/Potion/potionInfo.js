@@ -1,11 +1,18 @@
 import React, { useRef } from 'react';
 import PotionField from './potionField';
+import {getIngredientsTeste} from '../../services/IngredientService'
 
 import './potionInfo.css';
 import PotionType from './potionType';
 
 
-function PotionInfo() {
+function PotionInfo(props) {
+  
+  
+  const fetchIngredients = async (filter) => {
+    const response = await getIngredientsTeste(filter);
+    props.setIngredientsResult(response);
+  }
 
   const getRadios = () => {
     return <>
@@ -33,7 +40,15 @@ function PotionInfo() {
   const inputMaxIng = useRef(null);
 
   const handleClick = () => {
-    console.log(inputA, inputB, inputC, inputD, inputE);
+    let maxMag = parseInt(inputA.current.value||0) + parseInt(inputB.current.value||0) +parseInt(inputC.current.value||0) +parseInt(inputD.current.value||0) + parseInt(inputE.current.value||0);
+    fetchIngredients({
+      A:inputA.current.value||0, 
+      B:inputB.current.value||0, 
+      C:inputC.current.value||0,
+      D:inputD.current.value||0,
+      E:inputE.current.value||0,
+      maxIng:inputMaxIng.current.value||0,
+      maxMag:maxMag});
   }
 
   return <>

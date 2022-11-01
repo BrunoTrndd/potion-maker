@@ -32,11 +32,11 @@ class PotionCombinator {
   }
   
   arraysEqual(a1, a2) {
-    let isEqual = false;
-    a1.forEach((e, i)=>{
-      isEqual = e.name == a2[i].name
-    })
-    return isEqual
+    for(let i = 0; i < a1.length; i++) {
+      if(a1[i].name != a2[i].name) 
+        return false
+    }
+    return true
   }
   
   getRelevantIngredients(goalPotion) {
@@ -80,6 +80,9 @@ class PotionCombinator {
         alpha = nxt.value,
         psi = alpha;
       while (!nxt.done) {
+        if(i == 342) {
+          let a = 1;
+        }
         psi = nxt.value;
         if(this.ingredientsMatchWithGoal(psi, goalPotion))
           this.addCombination(psi)
@@ -156,5 +159,8 @@ class PotionCombinator {
   }
   
 }
+
+var potionCombinator = new PotionCombinator();
+potionCombinator.getPossibleCombinations({ A: 18, B: 0, C: 18, D: 0, E: 0, totalMagimins: 36}, {maxIngredient:6, maxMagimins:140})
 
 module.exports = PotionCombinator;

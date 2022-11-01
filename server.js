@@ -4,6 +4,7 @@ const Cauldrons = require('./cauldrons/cauldron');
 const PotionCombinator = require('./potions/potion');
 const app = express();
 const port = process.env.PORT || 5000;
+var url = require('url');
 
 app.get('/ingredientes', (req, res) => {
   res.send(Ingredients.getIngredients(req.query));
@@ -14,10 +15,16 @@ app.get('/cauldrons', (req, res)=>{
 });
 
 app.get('/potion', (req, res)=>{
-  
+  filter = JSON.parse(url.parse(req.url, true).query['potion'])
   let potionCombinator = new PotionCombinator()
-  potionCombinator.getPossibleCombinations({A:12, B:12, C:0, D:0, E:0, totalMagimins: 24}, {maxIngredient:7, maxMagimins:140})
-  potionCombinator.possiblePotions
+  potionCombinator.getPossibleCombinations({
+    A:parseInt(filter.A), 
+    B:parseInt(filter.B), 
+    C:parseInt(filter.C), 
+    D:parseInt(filter.D), 
+    E:parseInt(filter.E), 
+    totalMagimins: parseInt(filter.maxMag)
+  }, {maxIngredient:parseInt(filter.maxIng), maxMagimins:140})
   res.send(potionCombinator.possiblePotions);
 
 });

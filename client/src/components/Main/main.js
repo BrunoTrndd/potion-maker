@@ -33,14 +33,14 @@ function Main() {
   }
 
   function handleClickCalculatePotion() {
-    
+
   }
   
   return <>
     <div className='content grid grid-3-1'>
       <div className='box leftBox flex'>
         <CauldronTypeList setSelectedCauldron={setSelectedCauldron}></CauldronTypeList>
-        <PotionInfo></PotionInfo>
+        <PotionInfo setIngredientsResult={setIngredientsResult}></PotionInfo>
       </div>
       <div className='box centerBox flex'>
         {/* <Logo></Logo> */}
